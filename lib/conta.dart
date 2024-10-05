@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// Função principal que executa o app
 void main() => runApp(const Conta());
 
 class Conta extends StatelessWidget {
@@ -8,9 +9,11 @@ class Conta extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      // Coluna para organizar os elementos verticalmente
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        // Linha que exibe o título "Conta" e um ícone de navegação
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -18,28 +21,30 @@ class Conta extends StatelessWidget {
               "Conta",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
             ),
+            // Botão com ícone de seta pra frente
             IconButton(
                 onPressed: () {},
                 icon: Icon(Icons.arrow_forward_ios_outlined,
                     color: Color(0xFFC5C5C5))),
           ],
         ),
-        SizedBox(
-          height: 10,
-        ),
+        SizedBox(height: 10,),
+
+        // Container que exibe o saldo da conta
         Container(
           child: Text(
             "R\$ 1.000,00",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
           ),
         ),
-        SizedBox(
-          height: 30,
-        ),
+        SizedBox(height: 30,),
+
+        //Container com botões para diferentes ações (Pix, pagar, Qrcode, transferir)
         Container(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
+              //Container para o botão PIX
               Container(
                 child: Column(
                   children: [
@@ -57,6 +62,7 @@ class Conta extends StatelessWidget {
                   ],
                 ),
               ),
+              //Container para o Botão PAGAR
               Container(
                 child: Column(
                   children: [
@@ -78,6 +84,7 @@ class Conta extends StatelessWidget {
                   ],
                 ),
               ),
+              //Container para o botão QRCODE
               Container(
                 child: Column(
                   children: [
@@ -99,6 +106,7 @@ class Conta extends StatelessWidget {
                   ],
                 ),
               ),
+              // Container para o botão TRANSFERIR
               Container(
                 child: Column(
                   children: [
@@ -123,9 +131,9 @@ class Conta extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(
-          height: 30,
-        ),
+        SizedBox(height: 30,),
+
+        // Seção de cartões e caixinhas de planejamento
         Container(
           child: Column(
             children: [
@@ -140,9 +148,9 @@ class Conta extends StatelessWidget {
                       style: TextStyle(fontWeight: FontWeight.bold)),
                 ),
               ),
-              SizedBox(
-                height: 30,
-              ),
+              SizedBox(height: 30,),
+
+              // Card sobre "Caixinhas"
               Card(
                   margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
                   color: Color(0xFFECECEC),
@@ -157,12 +165,16 @@ class Conta extends StatelessWidget {
             ],
           ),
         ),
+
+        // Divisor visual
         Padding(
           padding: EdgeInsets.fromLTRB(0, 30, 0, 30),
           child: Divider(
             height: 1,
           ),
         ),
+
+        // Seção de cartão de Crédito
         Container(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -225,6 +237,8 @@ class Conta extends StatelessWidget {
             height: 1,
           ),
         ),
+
+        // Seção de empréstimo
         Container(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -256,6 +270,8 @@ class Conta extends StatelessWidget {
             height: 1,
           ),
         ),
+
+        // Seção descubra mais
         Container(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

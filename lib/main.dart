@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:nubank_app/conta.dart';
+import 'package:nubank_app/conta.dart'; // Importa o arquivo que contém o widget 'Conta'
 
 void main() => runApp(const MainApp());
+// Função principal que inicia o aplicativo chamando o 'MainApp'
 
 class MainApp extends StatefulWidget {
   const MainApp({super.key});
@@ -14,7 +15,7 @@ class MainAppState extends State<MainApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false, // Remove a faixa de debug
       home: Scaffold(
         appBar: AppBar(
           leading: IconButton(
@@ -25,6 +26,7 @@ class MainAppState extends State<MainApp> {
             onPressed: () {},
             color: Color(0xFFF5F5F5),
           ),
+          // Lsita de ícones no lado direito do AppBar
           actions: [
             IconButton(
               onPressed: () {},
@@ -43,9 +45,10 @@ class MainAppState extends State<MainApp> {
         ),
         body: Container(
           margin: EdgeInsets.all(16),
+          // ListView permite a rolagem se o conteúdo for maior que a tela
           child: ListView(
             children: [
-              Conta(),
+              Conta(), // Exibe o widget 'Conta', que é importado de outro arquivo
             ],
           ),
         ),
